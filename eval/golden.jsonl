@@ -1,0 +1,20 @@
+# SAMPLE golden set for data/papers/attention.pdf ("Attention Is All You Need"). One JSON object per line.
+# Fields: question | paper (pdf file in data/papers) or paper_id | evidence (phrases that must appear in the
+# answering passage) | answerable | history (optional [["user","..."],["assistant","..."]] for multi-turn).
+# TODO (guide, Phase 11): grow this to 30-50 rows over 5 papers, 6-10 answerable + 5-10 unanswerable per
+# paper. Write the questions yourself, then run:  python -m eval.run_eval --check
+{"question": "Which optimizer was used to train the models?", "paper": "attention.pdf", "evidence": ["Adam optimizer"], "answerable": true}
+{"question": "What learning rate schedule was used, and how many warmup steps?", "paper": "attention.pdf", "evidence": ["warmup_steps"], "answerable": true}
+{"question": "How large is the English-German training dataset?", "paper": "attention.pdf", "evidence": ["4.5 million sentence pairs"], "answerable": true}
+{"question": "What hardware were the models trained on?", "paper": "attention.pdf", "evidence": ["P100 GPUs"], "answerable": true}
+{"question": "What regularization techniques does the Transformer use during training?", "paper": "attention.pdf", "evidence": ["Residual Dropout"], "answerable": true}
+{"question": "What BLEU score did the big model reach on English-to-German translation?", "paper": "attention.pdf", "evidence": ["28.4 BLEU"], "answerable": true}
+{"question": "How many parallel attention heads are used?", "paper": "attention.pdf", "evidence": ["parallel attention layers"], "answerable": true}
+{"question": "How does the model encode position information?", "paper": "attention.pdf", "evidence": ["sine and cosine functions"], "answerable": true}
+{"question": "How many identical layers make up the encoder?", "paper": "attention.pdf", "evidence": ["identical layers"], "answerable": true}
+{"question": "How many training steps were used for the base models?", "paper": "attention.pdf", "evidence": ["100,000 steps"], "answerable": true}
+{"question": "What did it use as the learning rate schedule?", "paper": "attention.pdf", "evidence": ["warmup_steps"], "answerable": true, "history": [["user", "What optimizer was used to train the Transformer?"], ["assistant", "The Adam optimizer [1]."]]}
+{"question": "How big is it?", "paper": "attention.pdf", "evidence": ["4.5 million sentence pairs"], "answerable": true, "history": [["user", "Which dataset was used for English-to-German translation?"], ["assistant", "The WMT 2014 English-German dataset [1]."]]}
+{"question": "What was the total training cost in US dollars?", "paper": "attention.pdf", "evidence": [], "answerable": false}
+{"question": "How many human evaluators rated the translation quality?", "paper": "attention.pdf", "evidence": [], "answerable": false}
+{"question": "What is the capital of France?", "paper": "attention.pdf", "evidence": [], "answerable": false}
